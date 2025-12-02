@@ -10,3 +10,9 @@
     . proxy = Creating channel in client app that channel will communicate with web service
     
  */
+
+
+// ================================ 02: Consuming WebService in client ====================================
+/*
+    . Created the client application and consumed he calculator web service
+*/

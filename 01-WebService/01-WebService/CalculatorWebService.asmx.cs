@@ -21,5 +21,37 @@ namespace _01_WebService
         {
             return string.Format(" Hello {0} {1} ", firstName, lastName);
         }
+
+        [WebMethod(Description = "Calculator Application and param int firstValue, int secondValue, string operation(eg: +,-,*,/)")]
+        public string Calculator(int firstValue, int secondValue, string operation)
+        {
+            double result = 0;
+
+            switch (operation)
+            {
+                case "+":
+                    result = (double)firstValue + (double)secondValue;
+                    break;
+                case "-":
+                    result = (double)firstValue - (double)secondValue;
+                    break;
+                case "*":
+                    result = (double)firstValue * (double)secondValue;
+                    break;
+                case "/":
+                    result = (double)firstValue / (double)secondValue;
+                    break;
+            }
+            return result.ToString();
+        }
+
+        [WebMethod]
+        public int Division(int a, int b)
+        {
+            int result = a / b;
+            return result;
+        }
+
+
     }
 }
