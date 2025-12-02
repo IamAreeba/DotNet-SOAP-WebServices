@@ -10,7 +10,7 @@ namespace _02_ConsumingWebService
     public partial class WebForm1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {   
 
         }
 
@@ -30,13 +30,27 @@ namespace _02_ConsumingWebService
 
         protected void btnDivision_click(object sender, EventArgs e)
         {
-            ServiceReference.CalculatorWebServiceSoapClient client = new ServiceReference.CalculatorWebServiceSoapClient();
-            int result = client.Division(Convert.ToInt32(txtFirstValue.Text), Convert.ToInt32(txtSecondValue.Text));
+            /*
+                ServiceReference.CalculatorWebServiceSoapClient client = new ServiceReference.CalculatorWebServiceSoapClient();
+                int result = client.Division(Convert.ToInt32(txtFirstValue.Text), Convert.ToInt32(txtSecondValue.Text));
 
-            if (result != 0)
+                if (result != 0)
+                {
+                    lblResult.Text = "Result: <b style = 'color:Green'>" + result.ToString() + "<b/>";
+                }
+            */
+
+            ServiceReference.CalculatorWebServiceSoapClient client = new ServiceReference.CalculatorWebServiceSoapClient();
+            ServiceReference.WebServiceResponse response = client.Division(Convert.ToInt32(txtFirstValue.Text), Convert.ToInt32(txtSecondValue.Text));
+            if(response.Result != string.Empty)
             {
-                lblResult.Text = "Result: <b style = 'color:Green'>" + result.ToString() + "<b/>";
+                lblResult.Text = "Result: <b style = 'color:Green'>" + response.Result + "<b/>";
             }
+            else
+            {
+                lblResult.Text = "Result: <b style = 'color:Red'>" + response.ErrorMessage + "<b/>";
+            }
+
         }
 
     }

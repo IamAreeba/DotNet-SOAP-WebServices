@@ -9,7 +9,70 @@
 //------------------------------------------------------------------------------
 
 namespace _02_ConsumingWebService.ServiceReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WebServiceResponse", Namespace="http://DotNet-areeba.com/webservice")]
+    [System.SerializableAttribute()]
+    public partial class WebServiceResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ResultField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ErrorMessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Result {
+            get {
+                return this.ResultField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResultField, value) != true)) {
+                    this.ResultField = value;
+                    this.RaisePropertyChanged("Result");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string ErrorMessage {
+            get {
+                return this.ErrorMessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorMessageField, value) != true)) {
+                    this.ErrorMessageField = value;
+                    this.RaisePropertyChanged("ErrorMessage");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://DotNet-areeba.com/webservice", ConfigurationName="ServiceReference.CalculatorWebServiceSoap")]
@@ -29,11 +92,12 @@ namespace _02_ConsumingWebService.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://DotNet-areeba.com/webservice/Calculator", ReplyAction="*")]
         System.Threading.Tasks.Task<_02_ConsumingWebService.ServiceReference.CalculatorResponse> CalculatorAsync(_02_ConsumingWebService.ServiceReference.CalculatorRequest request);
         
+        // CODEGEN: Generating message contract since element name DivisionResult from namespace http://DotNet-areeba.com/webservice is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://DotNet-areeba.com/webservice/Division", ReplyAction="*")]
-        int Division(int a, int b);
+        _02_ConsumingWebService.ServiceReference.DivisionResponse Division(_02_ConsumingWebService.ServiceReference.DivisionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://DotNet-areeba.com/webservice/Division", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> DivisionAsync(int a, int b);
+        System.Threading.Tasks.Task<_02_ConsumingWebService.ServiceReference.DivisionResponse> DivisionAsync(_02_ConsumingWebService.ServiceReference.DivisionRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -184,6 +248,78 @@ namespace _02_ConsumingWebService.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DivisionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Division", Namespace="http://DotNet-areeba.com/webservice", Order=0)]
+        public _02_ConsumingWebService.ServiceReference.DivisionRequestBody Body;
+        
+        public DivisionRequest() {
+        }
+        
+        public DivisionRequest(_02_ConsumingWebService.ServiceReference.DivisionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://DotNet-areeba.com/webservice")]
+    public partial class DivisionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int a;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int b;
+        
+        public DivisionRequestBody() {
+        }
+        
+        public DivisionRequestBody(int a, int b) {
+            this.a = a;
+            this.b = b;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DivisionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DivisionResponse", Namespace="http://DotNet-areeba.com/webservice", Order=0)]
+        public _02_ConsumingWebService.ServiceReference.DivisionResponseBody Body;
+        
+        public DivisionResponse() {
+        }
+        
+        public DivisionResponse(_02_ConsumingWebService.ServiceReference.DivisionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://DotNet-areeba.com/webservice")]
+    public partial class DivisionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public _02_ConsumingWebService.ServiceReference.WebServiceResponse DivisionResult;
+        
+        public DivisionResponseBody() {
+        }
+        
+        public DivisionResponseBody(_02_ConsumingWebService.ServiceReference.WebServiceResponse DivisionResult) {
+            this.DivisionResult = DivisionResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface CalculatorWebServiceSoapChannel : _02_ConsumingWebService.ServiceReference.CalculatorWebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -267,12 +403,31 @@ namespace _02_ConsumingWebService.ServiceReference {
             return ((_02_ConsumingWebService.ServiceReference.CalculatorWebServiceSoap)(this)).CalculatorAsync(inValue);
         }
         
-        public int Division(int a, int b) {
-            return base.Channel.Division(a, b);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        _02_ConsumingWebService.ServiceReference.DivisionResponse _02_ConsumingWebService.ServiceReference.CalculatorWebServiceSoap.Division(_02_ConsumingWebService.ServiceReference.DivisionRequest request) {
+            return base.Channel.Division(request);
         }
         
-        public System.Threading.Tasks.Task<int> DivisionAsync(int a, int b) {
-            return base.Channel.DivisionAsync(a, b);
+        public _02_ConsumingWebService.ServiceReference.WebServiceResponse Division(int a, int b) {
+            _02_ConsumingWebService.ServiceReference.DivisionRequest inValue = new _02_ConsumingWebService.ServiceReference.DivisionRequest();
+            inValue.Body = new _02_ConsumingWebService.ServiceReference.DivisionRequestBody();
+            inValue.Body.a = a;
+            inValue.Body.b = b;
+            _02_ConsumingWebService.ServiceReference.DivisionResponse retVal = ((_02_ConsumingWebService.ServiceReference.CalculatorWebServiceSoap)(this)).Division(inValue);
+            return retVal.Body.DivisionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<_02_ConsumingWebService.ServiceReference.DivisionResponse> _02_ConsumingWebService.ServiceReference.CalculatorWebServiceSoap.DivisionAsync(_02_ConsumingWebService.ServiceReference.DivisionRequest request) {
+            return base.Channel.DivisionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<_02_ConsumingWebService.ServiceReference.DivisionResponse> DivisionAsync(int a, int b) {
+            _02_ConsumingWebService.ServiceReference.DivisionRequest inValue = new _02_ConsumingWebService.ServiceReference.DivisionRequest();
+            inValue.Body = new _02_ConsumingWebService.ServiceReference.DivisionRequestBody();
+            inValue.Body.a = a;
+            inValue.Body.b = b;
+            return ((_02_ConsumingWebService.ServiceReference.CalculatorWebServiceSoap)(this)).DivisionAsync(inValue);
         }
     }
 }

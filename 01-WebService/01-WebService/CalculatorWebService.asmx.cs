@@ -31,7 +31,7 @@ namespace _01_WebService
             {
                 case "+":
                     result = (double)firstValue + (double)secondValue;
-                    break;
+                    break; 
                 case "-":
                     result = (double)firstValue - (double)secondValue;
                     break;
@@ -46,10 +46,28 @@ namespace _01_WebService
         }
 
         [WebMethod]
-        public int Division(int a, int b)
+        public WebServiceResponse Division(int a, int b)
         {
-            int result = a / b;
-            return result;
+            /* 
+                int result = a / b;
+                return result;
+            */
+
+
+            WebServiceResponse response = new WebServiceResponse();
+
+            try
+            {
+                response.Result = Convert.ToString(a / b);
+                response.ErrorMessage = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                response.Result = string.Empty;
+                response.ErrorMessage = ex.Message; 
+            }
+
+            return response;
         }
 
 

@@ -1,5 +1,6 @@
 ﻿
 
+
 // ================================ 01: Web Service Intro ====================================
 /*
     . Web Service attribute Namespace is used to uniquely identify the web service over the internet.
@@ -12,7 +13,16 @@
  */
 
 
-// ================================ 02: Consuming WebService in client ====================================
+
+// ================================ 02: Error Handling in Web Service ====================================
 /*
-    . Created the client application and consumed he calculator web service
+    . Created the client application and consumed he calculator web service\
+
+*/
+
+
+
+// ================================ 03: Error Handling in Web Service ====================================
+/*
+    . Made a class of response and used that in calculator web service to handled the divide by 0 exception and updated the client consuming app for showing the success or error message
 */
