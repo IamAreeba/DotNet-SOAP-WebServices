@@ -26,3 +26,9 @@
 /*
     . Made a class of response and used that in calculator web service to handled the divide by 0 exception and updated the client consuming app for showing the success or error message
 */
+
+
+// ================================ 04: Bindings in Web Service ====================================
+/*
+    . When we consume the web services bindings get invoked n web.config we have behaviour, bindings and client in system.servicemodel in web.config file
+*/
