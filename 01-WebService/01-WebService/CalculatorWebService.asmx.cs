@@ -53,7 +53,6 @@ namespace _01_WebService
                 return result;
             */
 
-
             WebServiceResponse response = new WebServiceResponse();
 
             try
@@ -70,6 +69,11 @@ namespace _01_WebService
             return response;
         }
 
+        [WebMethod]
+        public string Addition(int a, int b)
+        {
+            return Convert.ToString(a + b);
+        }
 
     }
 }

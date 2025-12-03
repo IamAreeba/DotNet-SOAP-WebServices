@@ -98,6 +98,13 @@ namespace _02_ConsumingWebService.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://DotNet-areeba.com/webservice/Division", ReplyAction="*")]
         System.Threading.Tasks.Task<_02_ConsumingWebService.ServiceReference.DivisionResponse> DivisionAsync(_02_ConsumingWebService.ServiceReference.DivisionRequest request);
+        
+        // CODEGEN: Generating message contract since element name AdditionResult from namespace http://DotNet-areeba.com/webservice is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://DotNet-areeba.com/webservice/Addition", ReplyAction="*")]
+        _02_ConsumingWebService.ServiceReference.AdditionResponse Addition(_02_ConsumingWebService.ServiceReference.AdditionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://DotNet-areeba.com/webservice/Addition", ReplyAction="*")]
+        System.Threading.Tasks.Task<_02_ConsumingWebService.ServiceReference.AdditionResponse> AdditionAsync(_02_ConsumingWebService.ServiceReference.AdditionRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -320,6 +327,78 @@ namespace _02_ConsumingWebService.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AdditionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Addition", Namespace="http://DotNet-areeba.com/webservice", Order=0)]
+        public _02_ConsumingWebService.ServiceReference.AdditionRequestBody Body;
+        
+        public AdditionRequest() {
+        }
+        
+        public AdditionRequest(_02_ConsumingWebService.ServiceReference.AdditionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://DotNet-areeba.com/webservice")]
+    public partial class AdditionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int a;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int b;
+        
+        public AdditionRequestBody() {
+        }
+        
+        public AdditionRequestBody(int a, int b) {
+            this.a = a;
+            this.b = b;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AdditionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AdditionResponse", Namespace="http://DotNet-areeba.com/webservice", Order=0)]
+        public _02_ConsumingWebService.ServiceReference.AdditionResponseBody Body;
+        
+        public AdditionResponse() {
+        }
+        
+        public AdditionResponse(_02_ConsumingWebService.ServiceReference.AdditionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://DotNet-areeba.com/webservice")]
+    public partial class AdditionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AdditionResult;
+        
+        public AdditionResponseBody() {
+        }
+        
+        public AdditionResponseBody(string AdditionResult) {
+            this.AdditionResult = AdditionResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface CalculatorWebServiceSoapChannel : _02_ConsumingWebService.ServiceReference.CalculatorWebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -428,6 +507,33 @@ namespace _02_ConsumingWebService.ServiceReference {
             inValue.Body.a = a;
             inValue.Body.b = b;
             return ((_02_ConsumingWebService.ServiceReference.CalculatorWebServiceSoap)(this)).DivisionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        _02_ConsumingWebService.ServiceReference.AdditionResponse _02_ConsumingWebService.ServiceReference.CalculatorWebServiceSoap.Addition(_02_ConsumingWebService.ServiceReference.AdditionRequest request) {
+            return base.Channel.Addition(request);
+        }
+        
+        public string Addition(int a, int b) {
+            _02_ConsumingWebService.ServiceReference.AdditionRequest inValue = new _02_ConsumingWebService.ServiceReference.AdditionRequest();
+            inValue.Body = new _02_ConsumingWebService.ServiceReference.AdditionRequestBody();
+            inValue.Body.a = a;
+            inValue.Body.b = b;
+            _02_ConsumingWebService.ServiceReference.AdditionResponse retVal = ((_02_ConsumingWebService.ServiceReference.CalculatorWebServiceSoap)(this)).Addition(inValue);
+            return retVal.Body.AdditionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<_02_ConsumingWebService.ServiceReference.AdditionResponse> _02_ConsumingWebService.ServiceReference.CalculatorWebServiceSoap.AdditionAsync(_02_ConsumingWebService.ServiceReference.AdditionRequest request) {
+            return base.Channel.AdditionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<_02_ConsumingWebService.ServiceReference.AdditionResponse> AdditionAsync(int a, int b) {
+            _02_ConsumingWebService.ServiceReference.AdditionRequest inValue = new _02_ConsumingWebService.ServiceReference.AdditionRequest();
+            inValue.Body = new _02_ConsumingWebService.ServiceReference.AdditionRequestBody();
+            inValue.Body.a = a;
+            inValue.Body.b = b;
+            return ((_02_ConsumingWebService.ServiceReference.CalculatorWebServiceSoap)(this)).AdditionAsync(inValue);
         }
     }
 }

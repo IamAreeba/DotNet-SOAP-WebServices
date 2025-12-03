@@ -32,3 +32,14 @@
 /*
     . When we consume the web services bindings get invoked n web.config we have behaviour, bindings and client in system.servicemodel in web.config file
 */
+
+// ================================ 05: WSDL in Web Service ====================================
+/*
+    . We know all req and res of the web service in WSDL document
+*/
+
+// ================================ 06: Proxy in Web Service ====================================
+/*
+    . Proxy = Creating channel in client app that channel will communicate with web service
+    . Proxy classes basically makes the end points to talk to web service
+*/
