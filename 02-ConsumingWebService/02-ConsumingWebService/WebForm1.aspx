@@ -11,13 +11,14 @@
         <div>
             <table style="font-family: Arial,'Segoe UI'">
                 <%-- Operations --%>
-                <tr>
+                <tr> 
                     <td>FirstValue</td>
                     <td>:</td>
                     <td>
                         <asp:TextBox ID="txtFirstValue" runat="server"></asp:TextBox>
                     </td>
                 </tr>
+
                 <tr>
                     <td>SecondValue</td>
                     <td>:</td>
@@ -25,6 +26,7 @@
                         <asp:TextBox ID="txtSecondValue" runat="server"></asp:TextBox>
                     </td>
                 </tr>
+
                 <tr>
                     <td>Operation</td>
                     <td>:</td>
@@ -32,11 +34,13 @@
                         <asp:TextBox ID="txtOperation" runat="server"></asp:TextBox>
                     </td>
                 </tr>
+
                 <tr>
                     <td colspan="3" align="right">
                         <asp:Button ID="btnCalculate" runat="server" Text="Calculate" OnClick="btnCalculate_click" />
                     </td>
                 </tr>
+
                 <tr>
                     <td colspan="3">
                         <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
@@ -47,7 +51,7 @@
 
                 <%-- Division --%>
 
-                <tr>
+                 <tr>
                     <td>FirstValue</td>
                     <td>:</td>
                     <td>
@@ -55,7 +59,7 @@
                     </td>
                 </tr>
 
-                <tr>
+                 <tr>
                     <td>SecondValue</td>
                     <td>:</td>
                     <td>
@@ -63,7 +67,7 @@
                     </td>
                 </tr>
 
-                <tr>
+                 <tr>
                     <td colspan="3" align="right">
                         <asp:Button ID="Button1" runat="server" OnClick="btnDivision_click" Text="Divide" />
                     </td>
@@ -76,6 +80,7 @@
                         <br />
                     </td>
                 </tr> 
+
 
                 <%-- Addition --%>
                 <tr>
@@ -100,7 +105,7 @@
                     </td>
                 </tr> 
                 
-                 <tr>
+                <tr>
                     <td colspan="3">
                         <asp:Label ID="lblResult2" runat="server" Text=""></asp:Label>
                         <br />

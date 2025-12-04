@@ -69,10 +69,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference\CalculatorWebService.disco" />
-    <None Include="Connected Services\ServiceReference\configuration91.svcinfo" />
-    <None Include="Connected Services\ServiceReference\configuration.svcinfo" />
-    <None Include="Connected Services\ServiceReference\Reference.svcmap">
+    <None Include="Connected Services\CalculatorWebServiceRef\CalculatorWebService.wsdl" />
+    <Content Include="Connected Services\CalculatorWebServiceRef\_02_ConsumingWebService.CalculatorWebServiceRef.AdditionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CalculatorWebServiceRef\_02_ConsumingWebService.CalculatorWebServiceRef.CalculatorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CalculatorWebServiceRef\_02_ConsumingWebService.CalculatorWebServiceRef.DivisionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CalculatorWebServiceRef\_02_ConsumingWebService.CalculatorWebServiceRef.PrintNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CalculatorWebServiceRef\_02_ConsumingWebService.CalculatorWebServiceRef.WebServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\CalculatorWebServiceRef\CalculatorWebService.disco" />
+    <None Include="Connected Services\CalculatorWebServiceRef\configuration91.svcinfo" />
+    <None Include="Connected Services\CalculatorWebServiceRef\configuration.svcinfo" />
+    <None Include="Connected Services\CalculatorWebServiceRef\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -80,7 +96,7 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\ServiceReference\Reference.cs">
+    <Compile Include="Connected Services\CalculatorWebServiceRef\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -95,22 +111,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference\CalculatorWebService.wsdl" />
-    <Content Include="Connected Services\ServiceReference\_02_ConsumingWebService.ServiceReference.CalculatorResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference\_02_ConsumingWebService.ServiceReference.PrintNameResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference\_02_ConsumingWebService.ServiceReference.DivisionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference\_02_ConsumingWebService.ServiceReference.WebServiceResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference\_02_ConsumingWebService.ServiceReference.AdditionResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -123,7 +123,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\CalculatorWebServiceRef\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

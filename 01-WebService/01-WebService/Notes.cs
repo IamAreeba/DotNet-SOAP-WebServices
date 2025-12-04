@@ -43,3 +43,8 @@
     . Proxy = Creating channel in client app that channel will communicate with web service
     . Proxy classes basically makes the end points to talk to web service
 */
+
+// ================================ 07: Session State in Web Service ====================================
+/*
+    . In order to allow the cookies in client we have to use the EnableSession = true attribute method in service and allowCookies = true in client web.config file
+*/

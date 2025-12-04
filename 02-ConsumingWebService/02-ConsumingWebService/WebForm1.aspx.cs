@@ -16,7 +16,7 @@ namespace _02_ConsumingWebService
 
         protected void btnCalculate_click(object sender, EventArgs e)
         {
-            ServiceReference.CalculatorWebServiceSoapClient client = new ServiceReference.CalculatorWebServiceSoapClient();
+            CalculatorWebServiceRef.CalculatorWebServiceSoapClient client = new CalculatorWebServiceRef.CalculatorWebServiceSoapClient();
             string result = client.Calculator(
                         Convert.ToInt32(txtFirstValue.Text),
                         Convert.ToInt32(txtSecondValue.Text),
@@ -40,8 +40,8 @@ namespace _02_ConsumingWebService
                 }
             */
 
-            ServiceReference.CalculatorWebServiceSoapClient client = new ServiceReference.CalculatorWebServiceSoapClient();
-            ServiceReference.WebServiceResponse response = client.Division(Convert.ToInt32(txtFirstValue1.Text), Convert.ToInt32(txtSecondValue1.Text));
+            CalculatorWebServiceRef.CalculatorWebServiceSoapClient client = new CalculatorWebServiceRef.CalculatorWebServiceSoapClient();
+            CalculatorWebServiceRef.WebServiceResponse response = client.Division(Convert.ToInt32(txtFirstValue1.Text), Convert.ToInt32(txtSecondValue1.Text));
             if(response.Result != string.Empty)
             {
                 lblResult1.Text = "Result: <b style = 'color:Green'>" + response.Result + "<b/>";
@@ -50,12 +50,11 @@ namespace _02_ConsumingWebService
             {
                 lblResult1.Text = "Result: <b style = 'color:Red'>" + response.ErrorMessage + "<b/>";
             }
-
         }
 
         protected void btnAdd_click(object sender, EventArgs e)
         {
-            ServiceReference.CalculatorWebServiceSoapClient client = new ServiceReference.CalculatorWebServiceSoapClient();
+            CalculatorWebServiceRef.CalculatorWebServiceSoapClient client = new CalculatorWebServiceRef.CalculatorWebServiceSoapClient();
             string response = client.Addition(Convert.ToInt32(txtFirstValue2.Text), Convert.ToInt32(txtSecondValue2.Text));
             if (response != string.Empty)
             {

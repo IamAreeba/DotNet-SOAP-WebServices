@@ -9,7 +9,7 @@ namespace _01_WebService
     /// <summary>
     /// Summary description for CalculatorWebService
     /// </summary>
-    [WebService(Namespace = "http://DotNet-areeba.com/webservice")]
+    [WebService(Namespace = "http://DotNet-areeba.com/calculatorwebservice")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 

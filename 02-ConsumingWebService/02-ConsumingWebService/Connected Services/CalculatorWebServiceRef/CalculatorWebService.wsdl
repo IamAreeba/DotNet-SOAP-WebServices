@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://DotNet-areeba.com/webservice" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://DotNet-areeba.com/webservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://DotNet-areeba.com/calculatorwebservice" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://DotNet-areeba.com/calculatorwebservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <s:schema elementFormDefault="qualified" targetNamespace="http://DotNet-areeba.com/webservice">
+    <s:schema elementFormDefault="qualified" targetNamespace="http://DotNet-areeba.com/calculatorwebservice">
       <s:element name="PrintName">
         <s:complexType>
           <s:sequence>
@@ -117,7 +117,7 @@
   <wsdl:binding name="CalculatorWebServiceSoap" type="tns:CalculatorWebServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="PrintName">
-      <soap:operation soapAction="http://DotNet-areeba.com/webservice/PrintName" style="document" />
+      <soap:operation soapAction="http://DotNet-areeba.com/calculatorwebservice/PrintName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -126,7 +126,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Calculator">
-      <soap:operation soapAction="http://DotNet-areeba.com/webservice/Calculator" style="document" />
+      <soap:operation soapAction="http://DotNet-areeba.com/calculatorwebservice/Calculator" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -135,7 +135,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Division">
-      <soap:operation soapAction="http://DotNet-areeba.com/webservice/Division" style="document" />
+      <soap:operation soapAction="http://DotNet-areeba.com/calculatorwebservice/Division" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -144,7 +144,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Addition">
-      <soap:operation soapAction="http://DotNet-areeba.com/webservice/Addition" style="document" />
+      <soap:operation soapAction="http://DotNet-areeba.com/calculatorwebservice/Addition" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -156,7 +156,7 @@
   <wsdl:binding name="CalculatorWebServiceSoap12" type="tns:CalculatorWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="PrintName">
-      <soap12:operation soapAction="http://DotNet-areeba.com/webservice/PrintName" style="document" />
+      <soap12:operation soapAction="http://DotNet-areeba.com/calculatorwebservice/PrintName" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -165,7 +165,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Calculator">
-      <soap12:operation soapAction="http://DotNet-areeba.com/webservice/Calculator" style="document" />
+      <soap12:operation soapAction="http://DotNet-areeba.com/calculatorwebservice/Calculator" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -174,7 +174,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Division">
-      <soap12:operation soapAction="http://DotNet-areeba.com/webservice/Division" style="document" />
+      <soap12:operation soapAction="http://DotNet-areeba.com/calculatorwebservice/Division" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -183,7 +183,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Addition">
-      <soap12:operation soapAction="http://DotNet-areeba.com/webservice/Addition" style="document" />
+      <soap12:operation soapAction="http://DotNet-areeba.com/calculatorwebservice/Addition" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -194,10 +194,10 @@
   </wsdl:binding>
   <wsdl:service name="CalculatorWebService">
     <wsdl:port name="CalculatorWebServiceSoap" binding="tns:CalculatorWebServiceSoap">
-      <soap:address location="https://localhost:44377/CalculatorWebService.asmx" />
+      <soap:address location="https://localhost:44377/Services/CalculatorWebService.asmx" />
     </wsdl:port>
     <wsdl:port name="CalculatorWebServiceSoap12" binding="tns:CalculatorWebServiceSoap12">
-      <soap12:address location="https://localhost:44377/CalculatorWebService.asmx" />
+      <soap12:address location="https://localhost:44377/Services/CalculatorWebService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
