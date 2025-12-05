@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Services\CalculatorWebService.asmx" />
+    <Content Include="Services\MethodOverloadingWebService.asmx" />
     <Content Include="Services\SessionsWebService.asmx" />
     <Content Include="Services\TimeOutWebService.asmx" />
     <Content Include="Web.config" />
@@ -79,6 +80,10 @@
     </Compile>
     <Compile Include="Notes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\MethodOverloadingWebService.asmx.cs">
+      <DependentUpon>MethodOverloadingWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Services\SessionsWebService.asmx.cs">
       <DependentUpon>SessionsWebService.asmx</DependentUpon>
       <SubType>Component</SubType>

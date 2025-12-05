@@ -17,7 +17,6 @@
 // ================================ 02: Error Handling in Web Service ====================================
 /*
     . Created the client application and consumed he calculator web service\
-
 */
 
 
@@ -53,4 +52,11 @@
 /*
     . Threading make the execution process sleep for whatever the time range you define
     . In client web config we have used the send and receive Timeout property to make the service work in that given time if not define it will through exception
+*/
+
+
+// ================================ 09: Method Overloading in Web Service ====================================
+/*
+    . If method has same name and attribute but return type is diffferent than method overloading will be done
+    . ASMX Web Services do NOT support method overloading according to WS-I rules, even with different MessageNames. You must rename methods or disable WS-I conformance.
 */
