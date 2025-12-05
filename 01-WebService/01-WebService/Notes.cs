@@ -48,3 +48,9 @@
 /*
     . In order to allow the cookies in client we have to use the EnableSession = true attribute method in service and allowCookies = true in client web.config file
 */
+
+// ================================ 08: TimeOut Exception in Web Service ====================================
+/*
+    . Threading make the execution process sleep for whatever the time range you define
+    . In client web config we have used the send and receive Timeout property to make the service work in that given time if not define it will through exception
+*/

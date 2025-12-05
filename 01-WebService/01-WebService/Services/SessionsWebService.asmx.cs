@@ -73,8 +73,5 @@ namespace _01_WebService.Services
             Session["Count"] = count;
             return count.ToString();
         }
-
-
-
     }
 }

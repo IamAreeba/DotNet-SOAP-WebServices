@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://DotNet-areeba.com/timeoutwebservice" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://DotNet-areeba.com/timeoutwebservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://DotNet-areeba.com/timeoutwebservice">
+      <s:element name="GreetUser">
+        <s:complexType />
+      </s:element>
+      <s:element name="GreetUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GreetUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GreetUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GreetUser" />
+  </wsdl:message>
+  <wsdl:message name="GreetUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GreetUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TimeOutWebServiceSoap">
+    <wsdl:operation name="GreetUser">
+      <wsdl:input message="tns:GreetUserSoapIn" />
+      <wsdl:output message="tns:GreetUserSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TimeOutWebServiceSoap" type="tns:TimeOutWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GreetUser">
+      <soap:operation soapAction="http://DotNet-areeba.com/timeoutwebservice/GreetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TimeOutWebServiceSoap12" type="tns:TimeOutWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GreetUser">
+      <soap12:operation soapAction="http://DotNet-areeba.com/timeoutwebservice/GreetUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TimeOutWebService">
+    <wsdl:port name="TimeOutWebServiceSoap" binding="tns:TimeOutWebServiceSoap">
+      <soap:address location="https://localhost:44377/Services/TimeOutWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TimeOutWebServiceSoap12" binding="tns:TimeOutWebServiceSoap12">
+      <soap12:address location="https://localhost:44377/Services/TimeOutWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -7,16 +7,16 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F14CBBF6-02DF-4660-A5A4-2C3CB8BBD7EA}</ProjectGuid>
+    <ProjectGuid>{CF109516-4480-417A-B880-2A77E030DA0A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_01_WebService</RootNamespace>
-    <AssemblyName>01-WebService</AssemblyName>
+    <RootNamespace>_04_ClientTimeOutWebService</RootNamespace>
+    <AssemblyName>04-ClientTimeOutWebService</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44377</IISExpressSSLPort>
+    <IISExpressSSLPort>44371</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -44,6 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,27 +69,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Services\CalculatorWebService.asmx" />
-    <Content Include="Services\SessionsWebService.asmx" />
-    <Content Include="Services\TimeOutWebService.asmx" />
+    <Content Include="ClientTimeOut.aspx" />
+    <None Include="Connected Services\TimeOutWebServiceRef\TimeOutWebService.disco" />
+    <None Include="Connected Services\TimeOutWebServiceRef\configuration91.svcinfo" />
+    <None Include="Connected Services\TimeOutWebServiceRef\configuration.svcinfo" />
+    <None Include="Connected Services\TimeOutWebServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
+    <None Include="Connected Services\TimeOutWebServiceRef\TimeOutWebService.wsdl" />
+    <Content Include="Connected Services\TimeOutWebServiceRef\_04_ClientTimeOutWebService.TimeOutWebServiceRef.GreetUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Services\CalculatorWebService.asmx.cs">
-      <DependentUpon>CalculatorWebService.asmx</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="ClientTimeOut.aspx.cs">
+      <DependentUpon>ClientTimeOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Notes.cs" />
+    <Compile Include="ClientTimeOut.aspx.designer.cs">
+      <DependentUpon>ClientTimeOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\TimeOutWebServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\SessionsWebService.asmx.cs">
-      <DependentUpon>SessionsWebService.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Services\TimeOutWebService.asmx.cs">
-      <DependentUpon>TimeOutWebService.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="WebServiceResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -98,7 +107,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\TimeOutWebServiceRef\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -112,9 +126,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62375</DevelopmentServerPort>
+          <DevelopmentServerPort>56802</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44377/</IISUrl>
+          <IISUrl>https://localhost:44371/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
